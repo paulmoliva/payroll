@@ -1,0 +1,16 @@
+from database import db
+from . import base_model
+
+
+class ASD(db.model, base_model.BaseModel):
+    __tablename__ = 'asd'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255))
+    fte = db.Column(db.Boolean)
+    barg_unit = db.Column(db.String(255))
+    loc_cd = db.Column(db.Integer)
+    location = db.Column(db.String(255))
+    title = db.Column(db.String(255))
+    gross = db.Column(db.Float)
+    benefits = db.Column(db.Float)
+    total = db.Column(db.Float)
