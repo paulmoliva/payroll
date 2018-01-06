@@ -1,6 +1,8 @@
 import React from 'react';
 
 import Nav from './nav.jsx';
+import Container from './container.jsx';
+import SearchTable from './searchTable.jsx';
 
 class App extends React.Component {
   constructor(props){
@@ -11,7 +13,9 @@ class App extends React.Component {
     return (
       <div>
         <Nav />
-        <p>Hello squirrels</p>
+        <Container>
+          <SearchTable />
+        </Container>
       </div>
     );
   }

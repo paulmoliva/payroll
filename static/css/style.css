@@ -2,3 +2,40 @@ body {
     background: #262626 url(/static/img/bg.png) center top no-repeat;
     font: 62.5% Arial,Helvetica,sans-serif;
 }
+
+ul {
+  list-style: none;
+}
+
+#menu li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    border-right: 1px solid #cccccc;
+    padding:3px 6px;
+  	color:#fff;
+  	margin:0 3px;
+  	color:#990000;
+}
+
+a {
+  color: rgb(122, 0, 38);
+  font-weight: 700;
+}
+
+input[type=text]{
+  border: 1px solid #999;
+  width: 150px;
+  padding: 3px;
+}
+
+.searchField {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.searchLabel {
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 0px;
+}

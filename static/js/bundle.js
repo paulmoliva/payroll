@@ -18290,6 +18290,14 @@ var _nav = __webpack_require__(28);
 
 var _nav2 = _interopRequireDefault(_nav);
 
+var _container = __webpack_require__(29);
+
+var _container2 = _interopRequireDefault(_container);
+
+var _searchTable = __webpack_require__(30);
+
+var _searchTable2 = _interopRequireDefault(_searchTable);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18315,9 +18323,9 @@ var App = function (_React$Component) {
         null,
         _react2.default.createElement(_nav2.default, null),
         _react2.default.createElement(
-          'p',
+          _container2.default,
           null,
-          'Hello squirrels'
+          _react2.default.createElement(_searchTable2.default, null)
         )
       );
     }
@@ -18371,7 +18379,7 @@ var Nav = function (_React$Component) {
         _react2.default.createElement(
           'a',
           { href: 'http://www.alaskapolicyforum.org/' },
-          _react2.default.createElement('img', { src: '/static/img/logo.png', alt: 'Alaska Policy Forum', style: { margin: '1px 12%' } })
+          _react2.default.createElement('img', { src: '/static/img/logo.png', alt: 'Alaska Policy Forum', style: { margin: '9px 12%' } })
         )
       );
     }
@@ -18381,6 +18389,283 @@ var Nav = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Nav;
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Container = function (_React$Component) {
+  _inherits(Container, _React$Component);
+
+  function Container() {
+    _classCallCheck(this, Container);
+
+    return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).apply(this, arguments));
+  }
+
+  _createClass(Container, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        {
+          style: {
+            margin: '0 auto',
+            width: '980px',
+            minHeight: '75vh',
+            backgroundColor: '#fff'
+          }
+        },
+        _react2.default.createElement(
+          'div',
+          { id: 'menu',
+            style: {
+              padding: '5px 0px 5px 0',
+              textAlign: 'right',
+              fontSize: '12px'
+            }
+          },
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org' },
+                'Home'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'page_item page-item-2' },
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org/aboutus/', title: 'About Us' },
+                'About Us'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'page_item page-item-6 current_page_item' },
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org/contact-us/', title: 'Contact Us' },
+                'Contact Us'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'page_item page-item-5' },
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org/faq/', title: 'FAQs' },
+                'FAQs'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'page_item page-item-48' },
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org/internships/', title: 'Internships' },
+                'Internships'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'page_item page-item-260' },
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org/donations/', title: 'PARTNER WITH US' },
+                'PARTNER WITH US'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'page_item page-item-369' },
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org/resources/', title: 'Resource Pages' },
+                'Resource Pages'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'page_item page-item-342' },
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org/signup-for-e-mail-updates/', title: 'SIGNUP FOR E-MAIL UPDATES' },
+                'SIGNUP FOR E-MAIL UPDATES'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org/feed/' },
+                'RSS'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.alaskapolicyforum.org/feed/' },
+                _react2.default.createElement('img', { src: 'http://www.alaskapolicyforum.org/wp-content/themes/yamidoo/images/feed.png', alt: 'RSS' })
+              ),
+              ' '
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'h1',
+          { style: { fontSize: '22px', margin: '0px 30px 10px', padding: 0, color: '#98002E' } },
+          'Alaska Payroll Data (State and Local)'
+        ),
+        this.props.children
+      );
+    }
+  }]);
+
+  return Container;
+}(_react2.default.Component);
+
+exports.default = Container;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SearchTable = function (_React$Component) {
+  _inherits(SearchTable, _React$Component);
+
+  function SearchTable(props) {
+    _classCallCheck(this, SearchTable);
+
+    return _possibleConstructorReturn(this, (SearchTable.__proto__ || Object.getPrototypeOf(SearchTable)).call(this, props));
+  }
+
+  _createClass(SearchTable, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { style: { padding: '0px 30px' } },
+        _react2.default.createElement(
+          'div',
+          { style: { padding: '10px', backgroundColor: '#f4f4f4', fontSize: '12px' } },
+          _react2.default.createElement(
+            'div',
+            { style: { display: 'flex', flexDirection: 'row' } },
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Last Name'
+              ),
+              _react2.default.createElement('input', { type: 'text', id: 'last_name' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'First Name'
+              ),
+              _react2.default.createElement('input', { type: 'text', id: 'first_name' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Order By'
+              ),
+              _react2.default.createElement(
+                'select',
+                { id: 'order_by' },
+                _react2.default.createElement(
+                  'option',
+                  { value: 'last_name' },
+                  'Last Name'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'salary_high' },
+                  'Salary High to Low'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'last_name' },
+                  'Salary Low to High'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'button',
+            { id: 'submit', style: { marginTop: '10px' } },
+            'Search'
+          )
+        )
+      );
+    }
+  }]);
+
+  return SearchTable;
+}(_react2.default.Component);
+
+exports.default = SearchTable;
 
 /***/ })
 /******/ ]);

@@ -5,7 +5,7 @@ class Nav extends React.Component {
     return (
        <div id="logo" style={{margin: '0 auto', display: 'inline'}}>
          <a href="http://www.alaskapolicyforum.org/">
-           <img src="/static/img/logo.png" alt="Alaska Policy Forum" style={{margin: '1px 12%'}}/>
+           <img src="/static/img/logo.png" alt="Alaska Policy Forum" style={{margin: '9px 12%'}}/>
          </a>
       </div>
    );
