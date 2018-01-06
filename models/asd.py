@@ -6,6 +6,8 @@ class ASD(db.model, base_model.BaseModel):
     __tablename__ = 'asd'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
+    first_name = db.Column(db.String(255))
+    last_name = db.Column(db.String(255))
     fte = db.Column(db.Boolean)
     barg_unit = db.Column(db.String(255))
     loc_cd = db.Column(db.Integer)

@@ -16,3 +16,12 @@ application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.secret_key = os.getenv('SECRET_KEY') or 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 db.init_app(application)
+
+
+@application.route('/search/asd')
+def search_asd():
+    search = flask.request.json
+
+if __name__ == '__main__':
+    application.run(debug=True)
+
