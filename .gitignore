@@ -53,3 +53,5 @@ ENV/
 .spyderproject
 .ropeproject
 .idea/
+node_modules/
+.DS_STORE

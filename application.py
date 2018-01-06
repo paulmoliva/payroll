@@ -30,7 +30,11 @@ def search_asd():
     results = asd.ASD.query
     if len(search['first_name']):
         results = results.filter(
-            asd.ASD.first_name == search['first_name']
+            asd.ASD.first_name.ilike('%{0}%'.format(search['first_name']))
+        )
+    if len(search['last_name']):
+        results = results.filter(
+            asd.ASD.last_name.ilike('%{0}%'.format(search['last_name']))
         )
 
     results = results.all()
