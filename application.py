@@ -4,6 +4,7 @@ import json
 from flask_cors import CORS
 
 from database import db
+from models import asd
 
 
 application = flask.Flask(__name__)
@@ -11,16 +12,32 @@ application = flask.Flask(__name__)
 CORS(application)
 
 application.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URL') or \
-    'mysql+pymysql://cranklogic:cranklogic@127.0.0.1/asd_payroll_local'
+    'mysql+pymysql://cranklogic:cranklogic@127.0.0.1/asd_payroll'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.secret_key = os.getenv('SECRET_KEY') or 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 db.init_app(application)
 
 
-@application.route('/search/asd')
+@application.route('/')
+def index():
+    return flask.render_template('index.html')
+
+
+@application.route('/search/asd', methods=['POST'])
 def search_asd():
     search = flask.request.json
+    results = asd.ASD.query
+    if len(search['first_name']):
+        results = results.filter(
+            asd.ASD.first_name == search['first_name']
+        )
+
+    results = results.all()
+    returned_json = []
+    for each_result in results:
+        returned_json.append(each_result.as_dict())
+    return returned_json
 
 if __name__ == '__main__':
     application.run(debug=True)

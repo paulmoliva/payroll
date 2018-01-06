@@ -2,7 +2,7 @@ from database import db
 from . import base_model
 
 
-class ASD(db.model, base_model.BaseModel):
+class ASD(db.Model, base_model.BaseModel):
     __tablename__ = 'asd'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))

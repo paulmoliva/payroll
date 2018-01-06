@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Salary Database | Alaska Policy Forum</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <input type='text' id='last_name'>
+    <input type='text' id='first_name'>
+    <select id='order_by'>
+      <option value='last_name'>Last Name</option>
+      <option value='salary_high'>Salary High to Low</option>
+      <option value='last_name'>Salary Low to High</option>
+    </select>
+    </br>
+    <button id='submit'>Search</button>
+    <script>
+      $('#submit').click( () => {
+        $.ajax({
+          url:'/search/asd',
+          type:'post',
+          data: JSON.stringify({
+            last_name: $('#last_name').val(),
+            first_name: $('#first_name').val(),
+            order_by: $('#order_by').val()
+          }),
+          contentType: 'application/json'
+        })
+      })
+    </script>
+  </body>
+</html>
