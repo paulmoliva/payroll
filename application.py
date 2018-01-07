@@ -36,10 +36,22 @@ def search_asd():
         results = results.filter(
             asd.ASD.last_name.ilike('%{0}%'.format(search['last_name']))
         )
-    # if len(search['title']):
-    #     results = results.filter(
-    #         asd.ASD.title.ilike('%{0}%'.format(search['title']))
-    #     )
+    if len(search['title']):
+        results = results.filter(
+            asd.ASD.title.ilike('%{0}%'.format(search['title']))
+        )
+    if len(search['department']):
+        results = results.filter(
+            asd.ASD.location.ilike('%{0}%'.format(search['department']))
+        )
+    if len(search['min_salary']):
+        results = results.filter(
+            asd.ASD.total >= int(search['min_salary'])
+        )
+    if len(search['max_salary']):
+        results = results.filter(
+            asd.ASD.total <= int(search['max_salary'])
+        )
 
     order_by = search['order_by']
     if order_by == 'last_name':

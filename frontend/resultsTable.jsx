@@ -53,9 +53,16 @@ class ResultsTable extends React.Component {
             <TableHeaderColumn
               dataField="title"
               filter={ { type: 'TextFilter', delay: 1000 } }
-              width='30%'
+              width='25%'
             >
               Title
+            </TableHeaderColumn>
+            <TableHeaderColumn
+              dataField="location"
+              filter={ { type: 'TextFilter', delay: 1000 } }
+              width='25%'
+            >
+              Location
             </TableHeaderColumn>
             <TableHeaderColumn
               dataField="gross"

@@ -21389,7 +21389,8 @@ var Container = function (_React$Component) {
             margin: '0 auto',
             width: '980px',
             minHeight: '75vh',
-            backgroundColor: '#fff'
+            backgroundColor: '#fff',
+            marginBottom: '20px'
           }
         },
         _react2.default.createElement(
@@ -21498,6 +21499,69 @@ var Container = function (_React$Component) {
           )
         ),
         _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'ul',
+            {
+              className: 'bigMenu',
+              style: {
+                backgroundColor: '#f4f4f4',
+                borderBottom: '1px solid #cccccc',
+                borderTop: '1px solid #cccccc',
+                padding: '7px 0',
+                paddingLeft: '17px',
+                width: '980px'
+              }
+            },
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://alaskapolicyforum.org' },
+                'Home'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://alaskapolicyforum.org/category/education' },
+                'Education'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://alaskapolicyforum.org/category/issues' },
+                'Issues'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://alaskapolicyforum.org/category/transparency' },
+                'Transparency'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://alaskapolicyforum.org/category/fiscal' },
+                'Fiscal Policy'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
           'h1',
           { style: { fontSize: '22px', margin: '0px 30px 10px', padding: 0, color: '#98002E' } },
           'Alaska Payroll Data (State and Local)'
@@ -21559,29 +21623,12 @@ var SearchTable = function (_React$Component) {
   _createClass(SearchTable, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
-
-      $.ajax({
-        url: '/search/asd',
-        type: 'post',
-        data: JSON.stringify({
-          last_name: $('#last_name').val(),
-          first_name: $('#first_name').val(),
-          order_by: $('#order_by').val()
-        }),
-        contentType: 'application/json',
-        success: function success(results) {
-          _this2.setState({
-            results: JSON.parse(results),
-            loading: false
-          });
-        }
-      });
+      this.submitSearch.bind(this)();
     }
   }, {
     key: 'submitSearch',
     value: function submitSearch() {
-      var _this3 = this;
+      var _this2 = this;
 
       this.setState({
         loading: true,
@@ -21593,11 +21640,15 @@ var SearchTable = function (_React$Component) {
         data: JSON.stringify({
           last_name: $('#last_name').val(),
           first_name: $('#first_name').val(),
-          order_by: $('#order_by').val()
+          order_by: $('#order_by').val(),
+          title: $('#title').val(),
+          department: $('#department').val(),
+          min_salary: $('#min_salary').val(),
+          max_salary: $('#max_salary').val()
         }),
         contentType: 'application/json',
         success: function success(results) {
-          _this3.setState({
+          _this2.setState({
             results: JSON.parse(results),
             loading: false
           });
@@ -21669,6 +21720,188 @@ var SearchTable = function (_React$Component) {
                   'option',
                   { value: 'salary_low' },
                   'Salary Low to High'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { style: { display: 'flex', flexDirection: 'row', marginTop: '10px' } },
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Title'
+              ),
+              _react2.default.createElement('input', { type: 'text', id: 'title' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Department/ School'
+              ),
+              _react2.default.createElement('input', { type: 'text', id: 'department' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Year'
+              ),
+              _react2.default.createElement(
+                'select',
+                { id: 'order_by' },
+                _react2.default.createElement(
+                  'option',
+                  { value: '2017' },
+                  '2017'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { style: { display: 'flex', flexDirection: 'row', marginTop: '10px' } },
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Agency/Entity'
+              ),
+              _react2.default.createElement(
+                'select',
+                { id: 'agency' },
+                _react2.default.createElement(
+                  'option',
+                  { value: 'asd' },
+                  'Anchorage School District'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Salary Range'
+              ),
+              _react2.default.createElement(
+                'div',
+                { style: { display: 'flex', flexDirection: 'row', alignItems: 'center' } },
+                _react2.default.createElement(
+                  'select',
+                  { id: 'min_salary' },
+                  _react2.default.createElement('option', { value: '' }),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '20000' },
+                    '$20,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '30000' },
+                    '$30,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '40000' },
+                    '$40,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '50000' },
+                    '$50,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '60000' },
+                    '$60,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '70000' },
+                    '$70,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '80000' },
+                    '$80,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '90000' },
+                    '$90,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '100000' },
+                    '$100,000+'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { style: { margin: 0 } },
+                  'to'
+                ),
+                _react2.default.createElement(
+                  'select',
+                  { id: 'max_salary' },
+                  _react2.default.createElement('option', { value: '' }),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '20000' },
+                    '$20,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '30000' },
+                    '$30,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '40000' },
+                    '$40,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '50000' },
+                    '$50,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '60000' },
+                    '$60,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '70000' },
+                    '$70,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '80000' },
+                    '$80,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '90000' },
+                    '$90,000'
+                  ),
+                  _react2.default.createElement(
+                    'option',
+                    { value: '100000' },
+                    '$100,000+'
+                  )
                 )
               )
             )
@@ -21789,9 +22022,18 @@ var ResultsTable = function (_React$Component) {
             {
               dataField: 'title',
               filter: { type: 'TextFilter', delay: 1000 },
-              width: '30%'
+              width: '25%'
             },
             'Title'
+          ),
+          _react2.default.createElement(
+            _reactBootstrapTable.TableHeaderColumn,
+            {
+              dataField: 'location',
+              filter: { type: 'TextFilter', delay: 1000 },
+              width: '25%'
+            },
+            'Location'
           ),
           _react2.default.createElement(
             _reactBootstrapTable.TableHeaderColumn,

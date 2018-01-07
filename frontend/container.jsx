@@ -8,7 +8,8 @@ class Container extends React.Component {
           margin: '0 auto',
           width: '980px',
           minHeight: '75vh',
-          backgroundColor: '#fff'
+          backgroundColor: '#fff',
+          marginBottom: '20px'
         }}
       >
         <div id="menu"
@@ -31,6 +32,27 @@ class Container extends React.Component {
             <li><a href="http://www.alaskapolicyforum.org/feed/"><img src="http://www.alaskapolicyforum.org/wp-content/themes/yamidoo/images/feed.png" alt="RSS" /></a> </li>
           </ul>
         </div>
+
+        <div>
+          <ul
+            className='bigMenu'
+            style={{
+              backgroundColor: '#f4f4f4',
+              borderBottom: '1px solid #cccccc',
+              borderTop: '1px solid #cccccc',
+              padding: '7px 0',
+              paddingLeft: '17px',
+              width: '980px'
+            }}
+          >
+            <li><a href="http://alaskapolicyforum.org">Home</a></li>
+            <li><a href="http://alaskapolicyforum.org/category/education">Education</a></li>
+            <li><a href="http://alaskapolicyforum.org/category/issues">Issues</a></li>
+            <li><a href="http://alaskapolicyforum.org/category/transparency">Transparency</a></li>
+            <li><a href="http://alaskapolicyforum.org/category/fiscal">Fiscal Policy</a></li>
+          </ul>
+        </div>
+
         <h1 style={{fontSize: '22px', margin: '0px 30px 10px', padding: 0, color: '#98002E'}}>
           Alaska Payroll Data (State and Local)
         </h1>

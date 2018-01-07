@@ -22,9 +22,24 @@ a {
   font-weight: 700;
 }
 
-input[type=text]{
+.bigMenu li {
+  display: inline;
+  border-right: 1px solid #cccccc;
+}
+
+.bigMenu a {
+  color: #7a0026;
+  display: inline;
+  padding: 3px 12px;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-size: 17px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.searchField input[type=text]{
   border: 1px solid #999;
-  width: 150px;
+  width: 174px;
   padding: 3px;
 }
 
@@ -32,6 +47,7 @@ input[type=text]{
   display: flex;
   flex-direction: column;
   margin-right: 20px;
+  min-width: 174px;
 }
 
 .searchLabel {
