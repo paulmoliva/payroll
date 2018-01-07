@@ -36,12 +36,24 @@ def search_asd():
         results = results.filter(
             asd.ASD.last_name.ilike('%{0}%'.format(search['last_name']))
         )
+    # if len(search['title']):
+    #     results = results.filter(
+    #         asd.ASD.title.ilike('%{0}%'.format(search['title']))
+    #     )
+
+    order_by = search['order_by']
+    if order_by == 'last_name':
+        results = results.order_by(asd.ASD.last_name.asc())
+    elif order_by == 'salary_high':
+        results = results.order_by(asd.ASD.total.desc())
+    elif order_by == 'salary_low':
+        results = results.order_by(asd.ASD.total.asc())
 
     results = results.all()
     returned_json = []
     for each_result in results:
         returned_json.append(each_result.as_dict())
-    return returned_json
+    return json.dumps(returned_json)
 
 if __name__ == '__main__':
     application.run(debug=True)
