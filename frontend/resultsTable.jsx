@@ -56,7 +56,7 @@ class ResultsTable extends React.Component {
               dataField="title"
               dataSort={true}
               filter={ { type: 'TextFilter', delay: 1000 } }
-              width='25%'
+              width='20%'
             >
               Title
             </TableHeaderColumn>
@@ -64,7 +64,7 @@ class ResultsTable extends React.Component {
               dataField="location"
               dataSort={true}
               filter={ { type: 'TextFilter', delay: 1000 } }
-              width='25%'
+              width='20%'
             >
               Location
             </TableHeaderColumn>
@@ -92,6 +92,7 @@ class ResultsTable extends React.Component {
               dataFormat={cell => {
                 return this.numberWithCommas(cell);
               }}
+              width="16%"
             >
               Total Compensation
             </TableHeaderColumn>

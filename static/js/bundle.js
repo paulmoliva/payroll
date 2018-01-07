@@ -22025,7 +22025,7 @@ var ResultsTable = function (_React$Component) {
               dataField: 'title',
               dataSort: true,
               filter: { type: 'TextFilter', delay: 1000 },
-              width: '25%'
+              width: '20%'
             },
             'Title'
           ),
@@ -22035,7 +22035,7 @@ var ResultsTable = function (_React$Component) {
               dataField: 'location',
               dataSort: true,
               filter: { type: 'TextFilter', delay: 1000 },
-              width: '25%'
+              width: '20%'
             },
             'Location'
           ),
@@ -22068,7 +22068,8 @@ var ResultsTable = function (_React$Component) {
               dataSort: true,
               dataFormat: function dataFormat(cell) {
                 return _this2.numberWithCommas(cell);
-              }
+              },
+              width: '16%'
             },
             'Total Compensation'
           )
