@@ -37,6 +37,7 @@ class ResultsTable extends React.Component {
             hover={true}
             options={this.options}
             pagination={true}
+            exportCSV
           >
             <TableHeaderColumn
               dataField="id" isKey={true}
@@ -45,6 +46,7 @@ class ResultsTable extends React.Component {
             </TableHeaderColumn>
             <TableHeaderColumn
               dataField="name"
+              dataSort={true}
               filter={ { type: 'TextFilter', delay: 1000 } }
               width='20%'
             >
@@ -52,6 +54,7 @@ class ResultsTable extends React.Component {
             </TableHeaderColumn>
             <TableHeaderColumn
               dataField="title"
+              dataSort={true}
               filter={ { type: 'TextFilter', delay: 1000 } }
               width='25%'
             >
@@ -59,6 +62,7 @@ class ResultsTable extends React.Component {
             </TableHeaderColumn>
             <TableHeaderColumn
               dataField="location"
+              dataSort={true}
               filter={ { type: 'TextFilter', delay: 1000 } }
               width='25%'
             >

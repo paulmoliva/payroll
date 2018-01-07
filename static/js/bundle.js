@@ -21999,7 +21999,8 @@ var ResultsTable = function (_React$Component) {
             data: this.props.results,
             hover: true,
             options: this.options,
-            pagination: true
+            pagination: true,
+            exportCSV: true
           },
           _react2.default.createElement(
             _reactBootstrapTable.TableHeaderColumn,
@@ -22012,6 +22013,7 @@ var ResultsTable = function (_React$Component) {
             _reactBootstrapTable.TableHeaderColumn,
             {
               dataField: 'name',
+              dataSort: true,
               filter: { type: 'TextFilter', delay: 1000 },
               width: '20%'
             },
@@ -22021,6 +22023,7 @@ var ResultsTable = function (_React$Component) {
             _reactBootstrapTable.TableHeaderColumn,
             {
               dataField: 'title',
+              dataSort: true,
               filter: { type: 'TextFilter', delay: 1000 },
               width: '25%'
             },
@@ -22030,6 +22033,7 @@ var ResultsTable = function (_React$Component) {
             _reactBootstrapTable.TableHeaderColumn,
             {
               dataField: 'location',
+              dataSort: true,
               filter: { type: 'TextFilter', delay: 1000 },
               width: '25%'
             },
