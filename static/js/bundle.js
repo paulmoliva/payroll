@@ -21935,6 +21935,7 @@ var SearchTable = function (_React$Component) {
             {
               id: 'submit',
               style: { marginTop: '10px' },
+              className: 'btn-primary',
               onClick: this.submitSearch.bind(this)
             },
             'Search'
@@ -21997,12 +21998,27 @@ var ResultsTable = function (_React$Component) {
         text: 'All', value: _this.props.results.length
       }], // you can change the dropdown list for size per page
       sizePerPage: 15, // which size per page you want to locate as default
-      pageStartIndex: 1 // where to start counting the pages
+      pageStartIndex: 1, // where to start counting the pages,
+      exportCSVBtn: _this.createCustomExportCSVButton
     };
     return _this;
   }
 
   _createClass(ResultsTable, [{
+    key: 'createCustomExportCSVButton',
+    value: function createCustomExportCSVButton() {
+      return _react2.default.createElement(
+        'button',
+        { type: 'button', 'class': 'btn   hidden-print' },
+        _react2.default.createElement(
+          'span',
+          null,
+          _react2.default.createElement('i', { 'class': 'fa glyphicon glyphicon-export fa-download' }),
+          ' Export to CSV'
+        )
+      );
+    }
+  }, {
     key: 'numberWithCommas',
     value: function numberWithCommas(cell) {
       return cell ? '$' + cell.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '';

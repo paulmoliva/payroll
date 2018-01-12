@@ -17,8 +17,17 @@ class ResultsTable extends React.Component {
         text: 'All', value: this.props.results.length
       } ], // you can change the dropdown list for size per page
       sizePerPage: 15,  // which size per page you want to locate as default
-      pageStartIndex: 1, // where to start counting the pages
+      pageStartIndex: 1, // where to start counting the pages,
+      exportCSVBtn: this.createCustomExportCSVButton
     };
+  }
+
+  createCustomExportCSVButton(){
+    return (
+      <button type="button" class="btn   hidden-print">
+        <span><i class="fa glyphicon glyphicon-export fa-download"></i> Export to CSV</span>
+      </button>
+    );
   }
 
   numberWithCommas(cell){

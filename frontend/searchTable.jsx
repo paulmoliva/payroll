@@ -156,6 +156,7 @@ class SearchTable extends React.Component {
           <button
             id='submit'
             style={{marginTop: '10px'}}
+            className='btn-primary'
             onClick={this.submitSearch.bind(this)}
           >
             Search
