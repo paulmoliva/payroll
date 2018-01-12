@@ -24,8 +24,8 @@ class ResultsTable extends React.Component {
 
   createCustomExportCSVButton(){
     return (
-      <button type="button" class="btn   hidden-print">
-        <span><i class="fa glyphicon glyphicon-export fa-download"></i> Export to CSV</span>
+      <button type="button" className="btn   hidden-print">
+        <span><i className="fa glyphicon glyphicon-export fa-download"></i> Export to CSV</span>
       </button>
     );
   }
@@ -75,7 +75,7 @@ class ResultsTable extends React.Component {
               filter={ { type: 'TextFilter', delay: 1000 } }
               width='20%'
             >
-              Location
+              Department / Location
             </TableHeaderColumn>
             <TableHeaderColumn
               dataField="gross"

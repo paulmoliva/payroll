@@ -91,8 +91,8 @@ class SearchTable extends React.Component {
               <p className='searchLabel'>Order By</p>
               <select id='order_by'>
                 <option value='last_name'>Last Name</option>
-                <option value='salary_high'>Salary High to Low</option>
-                <option value='salary_low'>Salary Low to High</option>
+                <option value='salary_high'>Compensation High to Low</option>
+                <option value='salary_low'>Compensation Low to High</option>
               </select>
             </div>
           </div>
@@ -103,7 +103,7 @@ class SearchTable extends React.Component {
               <input type='text' id='title' />
             </div>
             <div className='searchField'>
-              <p className='searchLabel'>Department/ School</p>
+              <p className='searchLabel'>Department/ Location</p>
               <input type='text' id='department' />
             </div>
             <div className='searchField'>

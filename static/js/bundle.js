@@ -21564,7 +21564,7 @@ var Container = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           { style: { fontSize: '22px', margin: '0px 30px 10px', padding: 0, color: '#98002E' } },
-          'Alaska Payroll Data (State and Local)'
+          'Alaska Payroll Data (State, Local, and School Districts)'
         ),
         this.props.children
       );
@@ -21738,12 +21738,12 @@ var SearchTable = function (_React$Component) {
                 _react2.default.createElement(
                   'option',
                   { value: 'salary_high' },
-                  'Salary High to Low'
+                  'Compensation High to Low'
                 ),
                 _react2.default.createElement(
                   'option',
                   { value: 'salary_low' },
-                  'Salary Low to High'
+                  'Compensation Low to High'
                 )
               )
             )
@@ -21767,7 +21767,7 @@ var SearchTable = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 { className: 'searchLabel' },
-                'Department/ School'
+                'Department/ Location'
               ),
               _react2.default.createElement('input', { type: 'text', id: 'department' })
             ),
@@ -22009,11 +22009,11 @@ var ResultsTable = function (_React$Component) {
     value: function createCustomExportCSVButton() {
       return _react2.default.createElement(
         'button',
-        { type: 'button', 'class': 'btn   hidden-print' },
+        { type: 'button', className: 'btn   hidden-print' },
         _react2.default.createElement(
           'span',
           null,
-          _react2.default.createElement('i', { 'class': 'fa glyphicon glyphicon-export fa-download' }),
+          _react2.default.createElement('i', { className: 'fa glyphicon glyphicon-export fa-download' }),
           ' Export to CSV'
         )
       );
@@ -22077,7 +22077,7 @@ var ResultsTable = function (_React$Component) {
               filter: { type: 'TextFilter', delay: 1000 },
               width: '20%'
             },
-            'Location'
+            'Department / Location'
           ),
           _react2.default.createElement(
             _reactBootstrapTable.TableHeaderColumn,
