@@ -15,6 +15,16 @@ class SearchTable extends React.Component {
     this.submitSearch.bind(this)();
   }
 
+  clearSearch(){
+    $('#last_name').val('');
+    $('#first_name').val('');
+    $('#order_by').val('');
+    $('#title').val('');
+    $('#department').val('');
+    $('#min_salary').val('');
+    $('#max_salary').val('');
+  }
+
   submitSearch(){
     this.setState({
       loading: true,
@@ -38,6 +48,7 @@ class SearchTable extends React.Component {
           results: JSON.parse(results),
           loading: false
         });
+        this.clearSearch();
       }
     });
   }
@@ -55,7 +66,18 @@ class SearchTable extends React.Component {
   render(){
     return(
       <div style={{padding: '0px 30px', }}>
-        <div style={{padding: '10px', backgroundColor: '#f4f4f4', fontSize: '12px'}}>
+        <form
+          style=
+            {{
+              padding: '10px',
+              backgroundColor: '#f4f4f4',
+              fontSize: '12px'
+            }}
+            onSubmit={ e => {
+              e.preventDefault();
+              this.submitSearch();
+            }}
+        >
           <div style={{display: 'flex', flexDirection: 'row'}} >
             <div className='searchField'>
               <p className='searchLabel'>Last Name</p>
@@ -138,7 +160,7 @@ class SearchTable extends React.Component {
           >
             Search
           </button>
-        </div>
+        </form>
         {
           this.state.loading ?
             this.loadingSpinner() :

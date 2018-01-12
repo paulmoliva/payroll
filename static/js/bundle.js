@@ -21626,6 +21626,17 @@ var SearchTable = function (_React$Component) {
       this.submitSearch.bind(this)();
     }
   }, {
+    key: 'clearSearch',
+    value: function clearSearch() {
+      $('#last_name').val('');
+      $('#first_name').val('');
+      $('#order_by').val('');
+      $('#title').val('');
+      $('#department').val('');
+      $('#min_salary').val('');
+      $('#max_salary').val('');
+    }
+  }, {
     key: 'submitSearch',
     value: function submitSearch() {
       var _this2 = this;
@@ -21652,6 +21663,7 @@ var SearchTable = function (_React$Component) {
             results: JSON.parse(results),
             loading: false
           });
+          _this2.clearSearch();
         }
       });
     }
@@ -21666,12 +21678,24 @@ var SearchTable = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       return _react2.default.createElement(
         'div',
         { style: { padding: '0px 30px' } },
         _react2.default.createElement(
-          'div',
-          { style: { padding: '10px', backgroundColor: '#f4f4f4', fontSize: '12px' } },
+          'form',
+          {
+            style: {
+              padding: '10px',
+              backgroundColor: '#f4f4f4',
+              fontSize: '12px'
+            },
+            onSubmit: function onSubmit(e) {
+              e.preventDefault();
+              _this3.submitSearch();
+            }
+          },
           _react2.default.createElement(
             'div',
             { style: { display: 'flex', flexDirection: 'row' } },
