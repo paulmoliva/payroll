@@ -90,7 +90,17 @@ class SearchTable extends React.Component {
 
   render(){
     return(
-      <div style={{padding: '0px 30px', }}>
+      <div style={{padding: '0px 30px', position:'relative'}}>
+        <div style={{position: 'absolute', top: 0, right: '30px', padding: '10px', width: '332px'}}>
+          <p style={{fontSize: '14px', fontWeight: 'bold'}}>Tips</p>
+          <ul style={{padding: 0, fontSize: '12px', listStyle: 'disc'}}>
+            <li>Enter any part of a word or name in the Search fields</li>
+
+            <li>Click Order by to re-sort the list by Compensation Amount or by Last Name</li>
+
+            <li>In the list, click on the header for a column to re-sort by that field</li>
+          </ul>
+        </div>
         <form
           style=
             {{
@@ -113,12 +123,34 @@ class SearchTable extends React.Component {
               <input type='text' id='first_name' />
             </div>
             <div className='searchField'>
-              <p className='searchLabel'>Order By</p>
-              <select id='order_by'>
-                <option value='last_name'>Last Name</option>
-                <option value='salary_high'>Compensation High to Low</option>
-                <option value='salary_low'>Compensation Low to High</option>
-              </select>
+              <p className='searchLabel'>Salary Range</p>
+              <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <select id='min_salary'>
+                  <option value=''></option>
+                  <option value='20000'>$20,000</option>
+                  <option value='30000'>$30,000</option>
+                  <option value='40000'>$40,000</option>
+                  <option value='50000'>$50,000</option>
+                  <option value='60000'>$60,000</option>
+                  <option value='70000'>$70,000</option>
+                  <option value='80000'>$80,000</option>
+                  <option value='90000'>$90,000</option>
+                  <option value='100000'>$100,000+</option>
+                </select>
+                <p style={{margin: 0}}>to</p>
+                <select id='max_salary'>
+                  <option value=''></option>
+                  <option value='20000'>$20,000</option>
+                  <option value='30000'>$30,000</option>
+                  <option value='40000'>$40,000</option>
+                  <option value='50000'>$50,000</option>
+                  <option value='60000'>$60,000</option>
+                  <option value='70000'>$70,000</option>
+                  <option value='80000'>$80,000</option>
+                  <option value='90000'>$90,000</option>
+                  <option value='100000'>$100,000+</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -151,34 +183,12 @@ class SearchTable extends React.Component {
               </select>
             </div>
             <div className='searchField'>
-              <p className='searchLabel'>Salary Range</p>
-              <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                <select id='min_salary'>
-                  <option value=''></option>
-                  <option value='20000'>$20,000</option>
-                  <option value='30000'>$30,000</option>
-                  <option value='40000'>$40,000</option>
-                  <option value='50000'>$50,000</option>
-                  <option value='60000'>$60,000</option>
-                  <option value='70000'>$70,000</option>
-                  <option value='80000'>$80,000</option>
-                  <option value='90000'>$90,000</option>
-                  <option value='100000'>$100,000+</option>
-                </select>
-                <p style={{margin: 0}}>to</p>
-                <select id='max_salary'>
-                  <option value=''></option>
-                  <option value='20000'>$20,000</option>
-                  <option value='30000'>$30,000</option>
-                  <option value='40000'>$40,000</option>
-                  <option value='50000'>$50,000</option>
-                  <option value='60000'>$60,000</option>
-                  <option value='70000'>$70,000</option>
-                  <option value='80000'>$80,000</option>
-                  <option value='90000'>$90,000</option>
-                  <option value='100000'>$100,000+</option>
-                </select>
-              </div>
+              <p className='searchLabel'>Order By</p>
+              <select id='order_by'>
+                <option value='last_name'>Last Name</option>
+                <option value='salary_high'>Compensation High to Low</option>
+                <option value='salary_low'>Compensation Low to High</option>
+              </select>
             </div>
           </div>
 

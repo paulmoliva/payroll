@@ -21760,7 +21760,35 @@ var SearchTable = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        { style: { padding: '0px 30px' } },
+        { style: { padding: '0px 30px', position: 'relative' } },
+        _react2.default.createElement(
+          'div',
+          { style: { position: 'absolute', top: 0, right: '30px', padding: '10px', width: '332px' } },
+          _react2.default.createElement(
+            'p',
+            { style: { fontSize: '14px', fontWeight: 'bold' } },
+            'Tips'
+          ),
+          _react2.default.createElement(
+            'ul',
+            { style: { padding: 0, fontSize: '12px', listStyle: 'disc' } },
+            _react2.default.createElement(
+              'li',
+              null,
+              'Enter any part of a word or name in the Search fields'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'Click Order by to re-sort the list by Compensation Amount or by Last Name'
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              'In the list, click on the header for a column to re-sort by that field'
+            )
+          )
+        ),
         _react2.default.createElement(
           'form',
           {
@@ -21796,110 +21824,6 @@ var SearchTable = function (_React$Component) {
                 'First Name'
               ),
               _react2.default.createElement('input', { type: 'text', id: 'first_name' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'searchField' },
-              _react2.default.createElement(
-                'p',
-                { className: 'searchLabel' },
-                'Order By'
-              ),
-              _react2.default.createElement(
-                'select',
-                { id: 'order_by' },
-                _react2.default.createElement(
-                  'option',
-                  { value: 'last_name' },
-                  'Last Name'
-                ),
-                _react2.default.createElement(
-                  'option',
-                  { value: 'salary_high' },
-                  'Compensation High to Low'
-                ),
-                _react2.default.createElement(
-                  'option',
-                  { value: 'salary_low' },
-                  'Compensation Low to High'
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { style: { display: 'flex', flexDirection: 'row', marginTop: '10px' } },
-            _react2.default.createElement(
-              'div',
-              { className: 'searchField' },
-              _react2.default.createElement(
-                'p',
-                { className: 'searchLabel' },
-                'Title'
-              ),
-              _react2.default.createElement('input', { type: 'text', id: 'title' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'searchField' },
-              _react2.default.createElement(
-                'p',
-                { className: 'searchLabel' },
-                'Department/ Location'
-              ),
-              _react2.default.createElement('input', { type: 'text', id: 'department' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'searchField' },
-              _react2.default.createElement(
-                'p',
-                { className: 'searchLabel' },
-                'Year'
-              ),
-              _react2.default.createElement(
-                'select',
-                { id: 'order_by' },
-                _react2.default.createElement(
-                  'option',
-                  { value: '2017' },
-                  '2017'
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { style: { display: 'flex', flexDirection: 'row', marginTop: '10px' } },
-            _react2.default.createElement(
-              'div',
-              { className: 'searchField' },
-              _react2.default.createElement(
-                'p',
-                { className: 'searchLabel' },
-                'Bargaining Unit'
-              ),
-              this.generateBargUnits()
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'searchField' },
-              _react2.default.createElement(
-                'p',
-                { className: 'searchLabel' },
-                'Agency/Entity'
-              ),
-              _react2.default.createElement(
-                'select',
-                { onChange: function onChange(e) {
-                    return _this3.setState({ agency: e.target.value });
-                  }, id: 'agency' },
-                _react2.default.createElement(
-                  'option',
-                  { value: 'asd' },
-                  'Anchorage School District'
-                )
-              )
             ),
             _react2.default.createElement(
               'div',
@@ -22016,6 +21940,110 @@ var SearchTable = function (_React$Component) {
                     { value: '100000' },
                     '$100,000+'
                   )
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { style: { display: 'flex', flexDirection: 'row', marginTop: '10px' } },
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Title'
+              ),
+              _react2.default.createElement('input', { type: 'text', id: 'title' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Department/ Location'
+              ),
+              _react2.default.createElement('input', { type: 'text', id: 'department' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Year'
+              ),
+              _react2.default.createElement(
+                'select',
+                { id: 'order_by' },
+                _react2.default.createElement(
+                  'option',
+                  { value: '2017' },
+                  '2017'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { style: { display: 'flex', flexDirection: 'row', marginTop: '10px' } },
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Bargaining Unit'
+              ),
+              this.generateBargUnits()
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Agency/Entity'
+              ),
+              _react2.default.createElement(
+                'select',
+                { onChange: function onChange(e) {
+                    return _this3.setState({ agency: e.target.value });
+                  }, id: 'agency' },
+                _react2.default.createElement(
+                  'option',
+                  { value: 'asd' },
+                  'Anchorage School District'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
+                'Order By'
+              ),
+              _react2.default.createElement(
+                'select',
+                { id: 'order_by' },
+                _react2.default.createElement(
+                  'option',
+                  { value: 'last_name' },
+                  'Last Name'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'salary_high' },
+                  'Compensation High to Low'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'salary_low' },
+                  'Compensation Low to High'
                 )
               )
             )
