@@ -52,6 +52,10 @@ def search_asd():
         results = results.filter(
             asd.ASD.total <= int(search['max_salary'])
         )
+    if len(search['barg_unit']):
+        results = results.filter(
+            asd.ASD.barg_unit.ilike('%{0}%'.format(search['barg_unit']))
+        )
 
     order_by = search['order_by']
     if order_by == 'last_name':

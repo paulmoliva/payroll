@@ -7,7 +7,8 @@ class SearchTable extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      results: []
+      results: [],
+      agency: 'asd'
     };
   }
 
@@ -40,7 +41,8 @@ class SearchTable extends React.Component {
         title: $('#title').val(),
         department: $('#department').val(),
         min_salary: $('#min_salary').val(),
-        max_salary: $('#max_salary').val()
+        max_salary: $('#max_salary').val(),
+        barg_unit: $('#barg_unit').val()
       }),
       contentType: 'application/json',
       success: results => {
@@ -51,6 +53,29 @@ class SearchTable extends React.Component {
         this.clearSearch();
       }
     });
+  }
+
+  generateBargUnits(){
+    if (this.state.agency === 'asd'){
+      return (
+        <select id='barg_unit'>
+          <option value=''></option>
+          <option value='ACE'>ACE</option>
+          <option value='AEA'>AEA</option>
+          <option value='APA'>APA</option>
+          <option value='BUS'>BUS</option>
+          <option value='CUST'>CUST</option>
+          <option value='EXMPT'>EXMPT</option>
+          <option value='FOOD'>FOOD</option>
+          <option value='MAINT'>MAINT</option>
+          <option value='NONREP'>NONREP</option>
+          <option value='SCHBD'>SCHBD</option>
+          <option value='SUB'>SUB</option>
+          <option value='TEMP'>TEMP</option>
+          <option value='TOTEM'>TOTEM</option>
+        </select>
+      );
+    }
   }
 
   loadingSpinner(){
@@ -116,8 +141,12 @@ class SearchTable extends React.Component {
 
           <div style={{display: 'flex', flexDirection: 'row', marginTop:'10px'}} >
             <div className='searchField'>
+              <p className='searchLabel'>Bargaining Unit</p>
+              {this.generateBargUnits()}
+            </div>
+            <div className='searchField'>
               <p className='searchLabel'>Agency/Entity</p>
-              <select id='agency'>
+              <select onChange={e => this.setState({agency: e.target.value})} id='agency'>
                 <option value='asd'>Anchorage School District</option>
               </select>
             </div>

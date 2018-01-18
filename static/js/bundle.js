@@ -21615,7 +21615,8 @@ var SearchTable = function (_React$Component) {
 
     _this.state = {
       loading: true,
-      results: []
+      results: [],
+      agency: 'asd'
     };
     return _this;
   }
@@ -21655,7 +21656,8 @@ var SearchTable = function (_React$Component) {
           title: $('#title').val(),
           department: $('#department').val(),
           min_salary: $('#min_salary').val(),
-          max_salary: $('#max_salary').val()
+          max_salary: $('#max_salary').val(),
+          barg_unit: $('#barg_unit').val()
         }),
         contentType: 'application/json',
         success: function success(results) {
@@ -21666,6 +21668,82 @@ var SearchTable = function (_React$Component) {
           _this2.clearSearch();
         }
       });
+    }
+  }, {
+    key: 'generateBargUnits',
+    value: function generateBargUnits() {
+      if (this.state.agency === 'asd') {
+        return _react2.default.createElement(
+          'select',
+          { id: 'barg_unit' },
+          _react2.default.createElement('option', { value: '' }),
+          _react2.default.createElement(
+            'option',
+            { value: 'ACE' },
+            'ACE'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'AEA' },
+            'AEA'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'APA' },
+            'APA'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'BUS' },
+            'BUS'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'CUST' },
+            'CUST'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'EXMPT' },
+            'EXMPT'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'FOOD' },
+            'FOOD'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'MAINT' },
+            'MAINT'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'NONREP' },
+            'NONREP'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'SCHBD' },
+            'SCHBD'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'SUB' },
+            'SUB'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'TEMP' },
+            'TEMP'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'TOTEM' },
+            'TOTEM'
+          )
+        );
+      }
     }
   }, {
     key: 'loadingSpinner',
@@ -21799,11 +21877,23 @@ var SearchTable = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 { className: 'searchLabel' },
+                'Bargaining Unit'
+              ),
+              this.generateBargUnits()
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'searchField' },
+              _react2.default.createElement(
+                'p',
+                { className: 'searchLabel' },
                 'Agency/Entity'
               ),
               _react2.default.createElement(
                 'select',
-                { id: 'agency' },
+                { onChange: function onChange(e) {
+                    return _this3.setState({ agency: e.target.value });
+                  }, id: 'agency' },
                 _react2.default.createElement(
                   'option',
                   { value: 'asd' },
