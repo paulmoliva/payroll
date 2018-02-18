@@ -2,13 +2,26 @@ import React from 'react';
 
 import ResultsTable from './resultsTable.jsx';
 
+import queryString from 'query-string';
+
 class SearchTable extends React.Component {
   constructor(props){
     super(props);
+    const parsed = queryString.parse(location.search);
+    const agency = parsed.agency;
+    let initialAgency = '';
+    if( agency === 'asd' ) {
+      initialAgency = 'asd';
+    } else if (agency === 'cbj' ) {
+      initialAgency = 'cbj';
+    } else {
+      initialAgency = 'asd';
+    }
     this.state = {
       loading: true,
       results: [],
-      agency: 'asd'
+      agency: initialAgency,
+      orderBy: 'last_name'
     };
   }
 
@@ -19,7 +32,6 @@ class SearchTable extends React.Component {
   clearSearch(){
     $('#last_name').val('');
     $('#first_name').val('');
-    $('#order_by').val('');
     $('#title').val('');
     $('#department').val('');
     $('#min_salary').val('');
@@ -32,17 +44,18 @@ class SearchTable extends React.Component {
       results: []
     });
     $.ajax({
-      url:'/search/asd',
+      url:'/search',
       type:'post',
       data: JSON.stringify({
         last_name: $('#last_name').val(),
         first_name: $('#first_name').val(),
-        order_by: $('#order_by').val(),
+        order_by: this.state.orderBy,
         title: $('#title').val(),
         department: $('#department').val(),
         min_salary: $('#min_salary').val(),
         max_salary: $('#max_salary').val(),
-        barg_unit: $('#barg_unit').val()
+        barg_unit: $('#barg_unit').val(),
+        agency: this.state.agency
       }),
       contentType: 'application/json',
       success: results => {
@@ -73,6 +86,16 @@ class SearchTable extends React.Component {
           <option value='SUB'>SUB</option>
           <option value='TEMP'>TEMP</option>
           <option value='TOTEM'>TOTEM</option>
+        </select>
+      );
+    } else if (this.state.agency === 'cbj') {
+      return (
+        <select id='barg_unit'>
+          <option value=''></option>
+          <option value='IAFF'>IAFF</option>
+          <option value='MEBA'>MEBA</option>
+          <option value='PSEA'>PSEA</option>
+          <option value='UN-REP'>UN-REP</option>
         </select>
       );
     }
@@ -178,13 +201,22 @@ class SearchTable extends React.Component {
             </div>
             <div className='searchField'>
               <p className='searchLabel'>Agency/Entity</p>
-              <select onChange={e => this.setState({agency: e.target.value})} id='agency'>
+              <select
+                value={this.state.agency}
+                onChange={e => this.setState({agency: e.target.value})}
+                id='agency'
+              >
                 <option value='asd'>Anchorage School District</option>
+                <option value='cbj'>City and Burough of Juneau</option>
               </select>
             </div>
             <div className='searchField'>
               <p className='searchLabel'>Order By</p>
-              <select id='order_by'>
+              <select
+                id='order_by'
+                value={this.state.orderBy}
+                onChange={e => this.setState({orderBy: e.target.value})}
+              >
                 <option value='last_name'>Last Name</option>
                 <option value='salary_high'>Compensation High to Low</option>
                 <option value='salary_low'>Compensation Low to High</option>

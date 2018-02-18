@@ -4,7 +4,7 @@ import json
 from flask_cors import CORS
 
 from database import db
-from models import asd
+from models import asd, cbj
 
 
 application = flask.Flask(__name__)
@@ -24,46 +24,51 @@ def index():
     return flask.render_template('index.html')
 
 
-@application.route('/search/asd', methods=['POST'])
+@application.route('/search', methods=['POST'])
 def search_asd():
     search = flask.request.json
-    results = asd.ASD.query
+    agency = search['agency']
+    if agency == 'asd':
+        model = asd.ASD
+    elif agency == 'cbj':
+        model = cbj.CBJ
+    results = model.query
     if len(search['first_name']):
         results = results.filter(
-            asd.ASD.first_name.ilike('%{0}%'.format(search['first_name']))
+            model.first_name.ilike('%{0}%'.format(search['first_name']))
         )
     if len(search['last_name']):
         results = results.filter(
-            asd.ASD.last_name.ilike('%{0}%'.format(search['last_name']))
+            model.last_name.ilike('%{0}%'.format(search['last_name']))
         )
     if len(search['title']):
         results = results.filter(
-            asd.ASD.title.ilike('%{0}%'.format(search['title']))
+            model.title.ilike('%{0}%'.format(search['title']))
         )
     if len(search['department']):
         results = results.filter(
-            asd.ASD.location.ilike('%{0}%'.format(search['department']))
+            model.location.ilike('%{0}%'.format(search['department']))
         )
     if len(search['min_salary']):
         results = results.filter(
-            asd.ASD.total >= int(search['min_salary'])
+            model.total >= int(search['min_salary'])
         )
     if len(search['max_salary']):
         results = results.filter(
-            asd.ASD.total <= int(search['max_salary'])
+            model.total <= int(search['max_salary'])
         )
     if len(search['barg_unit']):
         results = results.filter(
-            asd.ASD.barg_unit.ilike('%{0}%'.format(search['barg_unit']))
+            model.barg_unit.ilike('%{0}%'.format(search['barg_unit']))
         )
 
     order_by = search['order_by']
     if order_by == 'last_name':
-        results = results.order_by(asd.ASD.last_name.asc())
+        results = results.order_by(model.last_name.asc())
     elif order_by == 'salary_high':
-        results = results.order_by(asd.ASD.total.desc())
+        results = results.order_by(model.total.desc())
     elif order_by == 'salary_low':
-        results = results.order_by(asd.ASD.total.asc())
+        results = results.order_by(model.total.asc())
 
     results = results.all()
     returned_json = []
