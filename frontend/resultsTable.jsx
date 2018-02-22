@@ -18,13 +18,13 @@ class ResultsTable extends React.Component {
       } ], // you can change the dropdown list for size per page
       sizePerPage: 15,  // which size per page you want to locate as default
       pageStartIndex: 1, // where to start counting the pages,
-      exportCSVBtn: this.createCustomExportCSVButton
+      // exportCSVBtn: this.createCustomExportCSVButton
     };
   }
 
   createCustomExportCSVButton(){
     return (
-      <button type="button" className="btn   hidden-print">
+      <button type="button" className="btn react-bs-table-csv-btn hidden-print">
         <span><i className="fa glyphicon glyphicon-export fa-download"></i> Export to CSV</span>
       </button>
     );
@@ -58,6 +58,7 @@ class ResultsTable extends React.Component {
               dataSort={true}
               filter={ { type: 'TextFilter', delay: 1000 } }
               width='20%'
+              export
             >
               Name
             </TableHeaderColumn>

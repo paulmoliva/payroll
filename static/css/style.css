@@ -59,3 +59,9 @@ a {
 .react-bs-table table td, .react-bs-table table th {
   white-space: normal;
 }
+
+.btn-success {
+  background-color: white;
+  border: 1px solid whitesmoke;
+  color: black;
+}
