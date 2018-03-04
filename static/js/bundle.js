@@ -21624,6 +21624,8 @@ var SearchTable = function (_React$Component) {
       initialAgency = 'asd';
     } else if (agency === 'cbj') {
       initialAgency = 'cbj';
+    } else if (agency === 'university') {
+      initialAgency = 'university';
     } else {
       initialAgency = 'asd';
     }
@@ -21782,6 +21784,37 @@ var SearchTable = function (_React$Component) {
             'option',
             { value: 'UN-REP' },
             'UN-REP'
+          )
+        );
+      } else if (this.state.agency === 'university') {
+        return _react2.default.createElement(
+          'select',
+          { id: 'barg_unit' },
+          _react2.default.createElement('option', { value: '' }),
+          _react2.default.createElement(
+            'option',
+            { value: 'Local 6070 Crafts and Trades' },
+            'Local 6070 Crafts and Trades'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Not Unionized' },
+            'Not Unionized'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'United Academic - Adjunts' },
+            'United Academic - Adjunts'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'United Academics' },
+            'United Academics'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'University of Alaska Federation of Teachers' },
+            'UA Federation of Teachers'
           )
         );
       }
@@ -22066,6 +22099,11 @@ var SearchTable = function (_React$Component) {
                   'option',
                   { value: 'cbj' },
                   'City and Burough of Juneau'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'university' },
+                  'University of Alaska'
                 )
               )
             ),

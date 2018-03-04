@@ -4,7 +4,7 @@ import json
 from flask_cors import CORS
 
 from database import db
-from models import asd, cbj
+from models import asd, cbj, university
 
 
 application = flask.Flask(__name__)
@@ -32,6 +32,8 @@ def search_asd():
         model = asd.ASD
     elif agency == 'cbj':
         model = cbj.CBJ
+    elif agency == 'university':
+        model = university.University
     results = model.query
     if len(search['first_name']):
         results = results.filter(

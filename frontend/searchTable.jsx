@@ -14,6 +14,8 @@ class SearchTable extends React.Component {
       initialAgency = 'asd';
     } else if (agency === 'cbj' ) {
       initialAgency = 'cbj';
+    } else if (agency === 'university' ) {
+      initialAgency = 'university';
     } else {
       initialAgency = 'asd';
     }
@@ -96,6 +98,17 @@ class SearchTable extends React.Component {
           <option value='MEBA'>MEBA</option>
           <option value='PSEA'>PSEA</option>
           <option value='UN-REP'>UN-REP</option>
+        </select>
+      );
+    } else if (this.state.agency === 'university') {
+      return (
+        <select id='barg_unit'>
+          <option value=''></option>
+          <option value='Local 6070 Crafts and Trades'>Local 6070 Crafts and Trades</option>
+          <option value='Not Unionized'>Not Unionized</option>
+          <option value='United Academic - Adjunts'>United Academic - Adjunts</option>
+          <option value='United Academics'>United Academics</option>
+          <option value='University of Alaska Federation of Teachers'>UA Federation of Teachers</option>
         </select>
       );
     }
@@ -208,6 +221,7 @@ class SearchTable extends React.Component {
               >
                 <option value='asd'>Anchorage School District</option>
                 <option value='cbj'>City and Burough of Juneau</option>
+                <option value='university'>University of Alaska</option>
               </select>
             </div>
             <div className='searchField'>
