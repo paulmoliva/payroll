@@ -21626,6 +21626,8 @@ var SearchTable = function (_React$Component) {
       initialAgency = 'cbj';
     } else if (agency === 'university') {
       initialAgency = 'university';
+    } else if (agency === 'moa') {
+      initialAgency = 'moa';
     } else {
       initialAgency = 'asd';
     }
@@ -21815,6 +21817,122 @@ var SearchTable = function (_React$Component) {
             'option',
             { value: 'University of Alaska Federation of Teachers' },
             'UA Federation of Teachers'
+          )
+        );
+      } else if (this.state.agency === 'moa') {
+        return _react2.default.createElement(
+          'select',
+          { id: 'barg_unit' },
+          _react2.default.createElement('option', { value: '' }),
+          _react2.default.createElement(
+            'option',
+            { value: 'AMEA' },
+            'AMEA'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'APDEA - Sworn' },
+            'APDEA - Sworn'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'APDEA-Non Sworn' },
+            'APDEA-Non Sworn'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Assembly' },
+            'Assembly'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Board & Com Mem' },
+            'Board & Com Mem'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Executives' },
+            'Executives'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'IAFF 40 hr' },
+            'IAFF 40 hr'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'IAFF Dispatch' },
+            'IAFF Dispatch'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'IAFF Kelly' },
+            'IAFF Kelly'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'IBEW-MLP' },
+            'IBEW-MLP'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'IBEW-MOA' },
+            'IBEW-MOA'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'IBEW-Technician' },
+            'IBEW-Technician'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Local 71' },
+            'Local 71'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Mayor' },
+            'Mayor'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'NECA-Inside' },
+            'NECA-Inside'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'NECA-Outside' },
+            'NECA-Outside'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Non Rep Kelly' },
+            'Non Rep Kelly'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Non Represented' },
+            'Non Represented'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Non-Represented' },
+            'Non-Represented'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Op Engr 302' },
+            'Op Engr 302'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Plumbers' },
+            'Plumbers'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'Teamsters' },
+            'Teamsters'
           )
         );
       }
@@ -22104,6 +22222,11 @@ var SearchTable = function (_React$Component) {
                   'option',
                   { value: 'university' },
                   'University of Alaska'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'moa' },
+                  'Municipality of Anchorage'
                 )
               )
             ),

@@ -16,6 +16,8 @@ class SearchTable extends React.Component {
       initialAgency = 'cbj';
     } else if (agency === 'university' ) {
       initialAgency = 'university';
+    } else if (agency === 'moa' ) {
+      initialAgency = 'moa';
     } else {
       initialAgency = 'asd';
     }
@@ -109,6 +111,34 @@ class SearchTable extends React.Component {
           <option value='United Academic - Adjunts'>United Academic - Adjunts</option>
           <option value='United Academics'>United Academics</option>
           <option value='University of Alaska Federation of Teachers'>UA Federation of Teachers</option>
+        </select>
+      );
+    } else if (this.state.agency === 'moa') {
+      return (
+        <select id='barg_unit'>
+          <option value=''></option>
+          <option value="AMEA">AMEA</option>
+          <option value="APDEA - Sworn">APDEA - Sworn</option>
+          <option value="APDEA-Non Sworn">APDEA-Non Sworn</option>
+          <option value="Assembly">Assembly</option>
+          <option value="Board & Com Mem">Board & Com Mem</option>
+          <option value="Executives">Executives</option>
+          <option value="IAFF 40 hr">IAFF 40 hr</option>
+          <option value="IAFF Dispatch">IAFF Dispatch</option>
+          <option value="IAFF Kelly">IAFF Kelly</option>
+          <option value="IBEW-MLP">IBEW-MLP</option>
+          <option value="IBEW-MOA">IBEW-MOA</option>
+          <option value="IBEW-Technician">IBEW-Technician</option>
+          <option value="Local 71">Local 71</option>
+          <option value="Mayor">Mayor</option>
+          <option value="NECA-Inside">NECA-Inside</option>
+          <option value="NECA-Outside">NECA-Outside</option>
+          <option value="Non Rep Kelly">Non Rep Kelly</option>
+          <option value="Non Represented">Non Represented</option>
+          <option value="Non-Represented">Non-Represented</option>
+          <option value="Op Engr 302">Op Engr 302</option>
+          <option value="Plumbers">Plumbers</option>
+          <option value="Teamsters">Teamsters</option>
         </select>
       );
     }
@@ -222,6 +252,7 @@ class SearchTable extends React.Component {
                 <option value='asd'>Anchorage School District</option>
                 <option value='cbj'>City and Burough of Juneau</option>
                 <option value='university'>University of Alaska</option>
+                <option value='moa'>Municipality of Anchorage</option>
               </select>
             </div>
             <div className='searchField'>
