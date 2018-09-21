@@ -4,7 +4,7 @@ import json
 from flask_cors import CORS
 
 from database import db
-from models import asd, cbj, moa, university
+from models import asd, cbj, moa, university, peak
 
 
 application = flask.Flask(__name__)
@@ -17,6 +17,15 @@ application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.secret_key = os.getenv('SECRET_KEY') or 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 db.init_app(application)
+
+
+@application.route('/peaks/<school_name>', methods=['GET'])
+def search_peaks(school_name):
+    all_scores = peak.Peaks.query.filter( peak.Peaks.school_name == school_name).all()
+    result = []
+    for score in all_scores:
+        result.append(score.as_dict())
+    return json.dumps(result)
 
 
 @application.route('/')
