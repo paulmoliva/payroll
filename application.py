@@ -19,8 +19,10 @@ application.secret_key = os.getenv('SECRET_KEY') or 'A0Zr98j/3yX R~XHH!jmN]LWX/,
 db.init_app(application)
 
 
-@application.route('/peaks/<school_name>', methods=['GET'])
-def search_peaks(school_name):
+@application.route('/peaks', methods=['GET'])
+def search_peaks():
+    school_name = flask.request.args.get('school_name')
+    print(school_name)
     all_scores = peak.Peaks.query.filter( peak.Peaks.school_name == school_name).all()
     result = []
     for score in all_scores:
