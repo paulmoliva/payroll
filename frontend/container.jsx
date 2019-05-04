@@ -53,7 +53,7 @@ class Container extends React.Component {
           </ul>
         </div>
 
-        <h1 style={{fontSize: '22px', margin: '0px 30px 10px', padding: 0, color: '#98002E'}}>
+        <h1 style={{fontSize: '22px', margin: '0px 30px 10px', padding: 0, color: '#151D48'}}>
           Alaska Payroll Data (State, Local, and School Districts)
         </h1>
           {this.props.children}

@@ -1,5 +1,5 @@
 body {
-    background: #262626 url(/static/img/bg.png) center top no-repeat;
+    background: #FDB714 url(/static/img/bg.png) center top no-repeat;
     font: 62.5% Arial,Helvetica,sans-serif;
 }
 
@@ -14,12 +14,18 @@ ul {
     padding:3px 6px;
   	color:#fff;
   	margin:0 3px;
-  	color:#990000;
+  	color:#151D48;
 }
 
 a {
-  color: rgb(122, 0, 38);
+  color: #151D48;
   font-weight: 700;
+}
+
+.header-link {
+  display: flex;
+  justify-content: center;
+  filter: brightness(150%);
 }
 
 .bigMenu li {
@@ -28,7 +34,7 @@ a {
 }
 
 .bigMenu a {
-  color: #7a0026;
+  color: #151D48;
   display: inline;
   padding: 3px 12px;
   font-family: Georgia,"Times New Roman",Times,serif;

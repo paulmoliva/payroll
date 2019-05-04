@@ -9,18 +9,7 @@ class SearchTable extends React.Component {
     super(props);
     const parsed = queryString.parse(location.search);
     const agency = parsed.agency;
-    let initialAgency = '';
-    if( agency === 'asd' ) {
-      initialAgency = 'asd';
-    } else if (agency === 'cbj' ) {
-      initialAgency = 'cbj';
-    } else if (agency === 'university' ) {
-      initialAgency = 'university';
-    } else if (agency === 'moa' ) {
-      initialAgency = 'moa';
-    } else {
-      initialAgency = 'asd';
-    }
+    let initialAgency = agency || 'asd'
     this.state = {
       loading: true,
       results: [],
@@ -141,7 +130,7 @@ class SearchTable extends React.Component {
           <option value="Teamsters">Teamsters</option>
         </select>
       );
-    }
+    } else return <select id='barg_unit' disabled></select>
   }
 
   loadingSpinner(){
@@ -253,6 +242,7 @@ class SearchTable extends React.Component {
                 <option value='cbj'>City and Burough of Juneau</option>
                 <option value='university'>University of Alaska</option>
                 <option value='moa'>Municipality of Anchorage</option>
+                <option value='fnsb'>Fairbanks North Star Borough</option>
               </select>
             </div>
             <div className='searchField'>

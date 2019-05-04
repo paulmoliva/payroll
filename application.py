@@ -4,7 +4,7 @@ import json
 from flask_cors import CORS
 
 from database import db
-from models import asd, cbj, moa, university, peak
+from models import asd, cbj, moa, university, peak, fnsb
 
 
 application = flask.Flask(__name__)
@@ -23,7 +23,7 @@ db.init_app(application)
 def search_peaks():
     school_name = flask.request.args.get('school_name')
     print(school_name)
-    all_scores = peak.Peaks.query.filter( peak.Peaks.school_name == school_name).all()
+    all_scores = peak.Peaks.query.filter(peak.Peaks.school_name == school_name).all()
     result = []
     for score in all_scores:
         result.append(score.as_dict())
@@ -47,6 +47,8 @@ def search_asd():
         model = university.University
     elif agency == 'moa':
         model = moa.MOA
+    elif agency == 'fnsb':
+        model = fnsb.FNSB
     results = model.query
     if len(search['first_name']):
         results = results.filter(
@@ -72,7 +74,7 @@ def search_asd():
         results = results.filter(
             model.total <= int(search['max_salary'])
         )
-    if len(search['barg_unit']):
+    if search['barg_unit'] and len(search['barg_unit']):
         results = results.filter(
             model.barg_unit.ilike('%{0}%'.format(search['barg_unit']))
         )

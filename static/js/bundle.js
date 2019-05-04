@@ -21333,7 +21333,7 @@ var Nav = function (_React$Component) {
         { id: 'logo', style: { margin: '0 auto', display: 'inline' } },
         _react2.default.createElement(
           'a',
-          { href: 'http://www.alaskapolicyforum.org/' },
+          { className: 'header-link', href: 'http://www.alaskapolicyforum.org/' },
           _react2.default.createElement('img', { src: '/static/img/logo.png', alt: 'Alaska Policy Forum', style: { margin: '9px 12%' } })
         )
       );
@@ -21563,7 +21563,7 @@ var Container = function (_React$Component) {
         ),
         _react2.default.createElement(
           'h1',
-          { style: { fontSize: '22px', margin: '0px 30px 10px', padding: 0, color: '#98002E' } },
+          { style: { fontSize: '22px', margin: '0px 30px 10px', padding: 0, color: '#151D48' } },
           'Alaska Payroll Data (State, Local, and School Districts)'
         ),
         this.props.children
@@ -21619,18 +21619,7 @@ var SearchTable = function (_React$Component) {
 
     var parsed = _queryString2.default.parse(location.search);
     var agency = parsed.agency;
-    var initialAgency = '';
-    if (agency === 'asd') {
-      initialAgency = 'asd';
-    } else if (agency === 'cbj') {
-      initialAgency = 'cbj';
-    } else if (agency === 'university') {
-      initialAgency = 'university';
-    } else if (agency === 'moa') {
-      initialAgency = 'moa';
-    } else {
-      initialAgency = 'asd';
-    }
+    var initialAgency = agency || 'asd';
     _this.state = {
       loading: true,
       results: [],
@@ -21935,7 +21924,7 @@ var SearchTable = function (_React$Component) {
             'Teamsters'
           )
         );
-      }
+      } else return _react2.default.createElement('select', { id: 'barg_unit', disabled: true });
     }
   }, {
     key: 'loadingSpinner',
@@ -22227,6 +22216,11 @@ var SearchTable = function (_React$Component) {
                   'option',
                   { value: 'moa' },
                   'Municipality of Anchorage'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'fnsb' },
+                  'Fairbanks North Star Borough'
                 )
               )
             ),

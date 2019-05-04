@@ -4,4 +4,5 @@ from . import cbj
 from . import moa
 from . import university
 from . import peak
+from . import fnsb
 
