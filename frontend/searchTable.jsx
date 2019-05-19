@@ -130,6 +130,13 @@ class SearchTable extends React.Component {
           <option value="Teamsters">Teamsters</option>
         </select>
       );
+    } else if (this.state.agency === 'msb') {
+      return (
+        <select id="barg_unit">
+          <option value=''></option>
+          <option value="MSBEA">MSBEA</option>
+        </select>
+      );
     } else return <select id='barg_unit' disabled></select>
   }
 
@@ -147,7 +154,6 @@ class SearchTable extends React.Component {
     return(
       <div style={{padding: '0px 30px', position:'relative'}}>
         <div style={{position: 'absolute', top: 0, right: '30px', padding: '10px', width: '332px'}}>
-          <p style={{fontSize: '14px', fontWeight: 'bold'}}>Tips</p>
           <ul style={{padding: 0, fontSize: '12px', listStyle: 'disc'}}>
             <li>Enter any part of a word or name in the Search fields</li>
 
@@ -192,7 +198,7 @@ class SearchTable extends React.Component {
                   <option value='90000'>$90,000</option>
                   <option value='100000'>$100,000+</option>
                 </select>
-                <p style={{margin: 0}}>to</p>
+                <p style={{margin: '0px 10px'}}>to</p>
                 <select id='max_salary'>
                   <option value=''></option>
                   <option value='20000'>$20,000</option>
@@ -239,10 +245,10 @@ class SearchTable extends React.Component {
                 id='agency'
               >
                 <option value='asd'>Anchorage School District</option>
-                <option value='cbj'>City and Burough of Juneau</option>
                 <option value='university'>University of Alaska</option>
                 <option value='moa'>Municipality of Anchorage</option>
                 <option value='fnsb'>Fairbanks North Star Borough</option>
+                <option value='msb'>Mat Su Borough</option>
               </select>
             </div>
             <div className='searchField'>

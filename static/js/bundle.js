@@ -21276,7 +21276,6 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_nav2.default, null),
         _react2.default.createElement(
           _container2.default,
           null,
@@ -21334,7 +21333,7 @@ var Nav = function (_React$Component) {
         _react2.default.createElement(
           'a',
           { className: 'header-link', href: 'http://www.alaskapolicyforum.org/' },
-          _react2.default.createElement('img', { src: '/static/img/logo.png', alt: 'Alaska Policy Forum', style: { margin: '9px 12%' } })
+          _react2.default.createElement('img', { src: '/static/img/logo.png', alt: 'Alaska Policy Forum', style: { margin: '9px 12%', marginBottom: '55px' } })
         )
       );
     }
@@ -21362,6 +21361,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _nav = __webpack_require__(53);
+
+var _nav2 = _interopRequireDefault(_nav);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21384,186 +21387,282 @@ var Container = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        {
-          style: {
-            margin: '0 auto',
-            width: '980px',
-            minHeight: '75vh',
-            backgroundColor: '#fff',
-            marginBottom: '20px'
-          }
-        },
+        { id: 'page', className: 'site' },
         _react2.default.createElement(
-          'div',
-          { id: 'menu',
-            style: {
-              padding: '5px 0px 5px 0',
-              textAlign: 'right',
-              fontSize: '12px'
-            }
-          },
+          'header',
+          { id: 'saga-header', className: 'site-header' },
+          _react2.default.createElement(_nav2.default, null),
           _react2.default.createElement(
-            'ul',
-            null,
+            'div',
+            { className: 'saga-navigation' },
             _react2.default.createElement(
-              'li',
-              null,
+              'div',
+              { className: 'navigation-wrapper' },
               _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org' },
-                'Home'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              { className: 'page_item page-item-2' },
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org/aboutus/', title: 'About Us' },
-                'About Us'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              { className: 'page_item page-item-6 current_page_item' },
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org/contact-us/', title: 'Contact Us' },
-                'Contact Us'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              { className: 'page_item page-item-5' },
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org/faq/', title: 'FAQs' },
-                'FAQs'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              { className: 'page_item page-item-48' },
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org/internships/', title: 'Internships' },
-                'Internships'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              { className: 'page_item page-item-260' },
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org/donations/', title: 'PARTNER WITH US' },
-                'PARTNER WITH US'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              { className: 'page_item page-item-369' },
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org/resources/', title: 'Resource Pages' },
-                'Resource Pages'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              { className: 'page_item page-item-342' },
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org/signup-for-e-mail-updates/', title: 'SIGNUP FOR E-MAIL UPDATES' },
-                'SIGNUP FOR E-MAIL UPDATES'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org/feed/' },
-                'RSS'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.alaskapolicyforum.org/feed/' },
-                _react2.default.createElement('img', { src: 'http://www.alaskapolicyforum.org/wp-content/themes/yamidoo/images/feed.png', alt: 'RSS' })
-              ),
-              ' '
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'ul',
-            {
-              className: 'bigMenu',
-              style: {
-                backgroundColor: '#f4f4f4',
-                borderBottom: '1px solid #cccccc',
-                borderTop: '1px solid #cccccc',
-                padding: '7px 0',
-                paddingLeft: '17px',
-                width: '980px'
-              }
-            },
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { href: 'http://alaskapolicyforum.org' },
-                'Home'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { href: 'http://alaskapolicyforum.org/category/education' },
-                'Education'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { href: 'http://alaskapolicyforum.org/category/issues' },
-                'Issues'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { href: 'http://alaskapolicyforum.org/category/transparency' },
-                'Transparency'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { href: 'http://alaskapolicyforum.org/category/fiscal' },
-                'Fiscal Policy'
+                'nav',
+                { id: 'site-navigation', className: 'main-navigation' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'toggle-menu', 'aria-controls': 'primary-menu', 'aria-expanded': 'false' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'screen-reader-text' },
+                    'Primary Menu                    '
+                  ),
+                  _react2.default.createElement('i', { className: 'ham' })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'menu' },
+                  _react2.default.createElement(
+                    'ul',
+                    { id: 'primary-menu', className: 'menu menu-desktop' },
+                    _react2.default.createElement(
+                      'li',
+                      { id: 'menu-item-6211', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6211' },
+                      _react2.default.createElement(
+                        'a',
+                        { href: 'http://alaskapolicyforum.org/the-latest-2/' },
+                        'The Latest',
+                        _react2.default.createElement('i', { className: 'ion-ios-arrow-down' })
+                      ),
+                      _react2.default.createElement(
+                        'ul',
+                        { className: 'sub-menu' },
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6068', className: 'menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6068' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/category/blog/' },
+                            'Blog'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6089', className: 'menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6089' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/category/reports-policy-briefs/' },
+                            'Reports & Policy Briefs'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6090', className: 'menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6090' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/category/testimony/' },
+                            'Testimony'
+                          )
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      { id: 'menu-item-6184', className: 'menu-item menu-item-type-custom menu-item-object-custom menu-item-6184' },
+                      _react2.default.createElement(
+                        'a',
+                        { href: 'http://payroll.alaskapolicyforum.org' },
+                        'Public Payroll Data'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      { id: 'menu-item-6377', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6377' },
+                      _react2.default.createElement(
+                        'a',
+                        { href: 'http://alaskapolicyforum.org/legislator-report-cards/' },
+                        'Legislator Report Cards'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      { id: 'menu-item-6063', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6063' },
+                      _react2.default.createElement(
+                        'a',
+                        { href: 'http://alaskapolicyforum.org/aboutus/' },
+                        'About the Forum',
+                        _react2.default.createElement('i', { className: 'ion-ios-arrow-down' })
+                      ),
+                      _react2.default.createElement(
+                        'ul',
+                        { className: 'sub-menu' },
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6064', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6064' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/aboutus/vision-mission/' },
+                            'Vision & Mission'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6065', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6065' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/aboutus/meet-the-staff/' },
+                            'Staff'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6066', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6066' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/aboutus/faq/' },
+                            'FAQs'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6067', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6067' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/aboutus/contact-us/' },
+                            'Contact Us'
+                          )
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      { id: 'menu-item-6193', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6193' },
+                      _react2.default.createElement(
+                        'a',
+                        { href: 'http://alaskapolicyforum.org/issues/' },
+                        'Issues',
+                        _react2.default.createElement('i', { className: 'ion-ios-arrow-down' })
+                      ),
+                      _react2.default.createElement(
+                        'ul',
+                        { className: 'sub-menu' },
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6107', className: 'menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6107' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/category/state-budget-taxes/' },
+                            'State Budget & Taxes'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6105', className: 'menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6105' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/category/healthcare/' },
+                            'Health Care'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6145', className: 'menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6145' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/category/education/' },
+                            'Education'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6106', className: 'menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6106' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/category/other-issues/' },
+                            'Other Issues'
+                          )
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      { id: 'menu-item-6246', className: 'menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6246' },
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Get Involved',
+                        _react2.default.createElement('i', { className: 'ion-ios-arrow-down' })
+                      ),
+                      _react2.default.createElement(
+                        'ul',
+                        { className: 'sub-menu' },
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6245', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6245' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/get-involved/ways-to-give/' },
+                            'Ways to Give'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6061', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6061' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/get-involved/internships/' },
+                            'Internships'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6196', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6196' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/get-involved/volunteer/' },
+                            'Volunteer'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6198', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6198' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/get-involved/contact-your-legislators/' },
+                            'Contact Your Legislators'
+                          )
+                        ),
+                        _react2.default.createElement(
+                          'li',
+                          { id: 'menu-item-6199', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6199' },
+                          _react2.default.createElement(
+                            'a',
+                            { href: 'http://alaskapolicyforum.org/aboutus/contact-us/' },
+                            'Contact Us'
+                          )
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      { id: 'menu-item-6708', className: 'menu-item menu-item-type-custom menu-item-object-custom menu-item-6708' },
+                      _react2.default.createElement(
+                        'a',
+                        { href: 'http://alaskapolicyforum.org/anc_peaks/' },
+                        'PEAKS Data Map'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      { id: 'menu-item-6187', className: 'menu-item menu-item-type-post_type menu-item-object-page menu-item-6187' },
+                      _react2.default.createElement(
+                        'a',
+                        { href: 'http://alaskapolicyforum.org/sign-up-for-e-mail-updates/' },
+                        'Sign Up for E-mail Updates'
+                      )
+                    )
+                  )
+                ),
+                '                '
               )
             )
           )
         ),
         _react2.default.createElement(
           'h1',
-          { style: { fontSize: '22px', margin: '0px 30px 10px', padding: 0, color: '#151D48' } },
+          { style: { fontSize: '22px', margin: '10px 30px 10px', padding: 0, color: '#151D48' } },
           'Alaska Payroll Data (State, Local, and School Districts)'
         ),
         this.props.children
@@ -21924,6 +22023,17 @@ var SearchTable = function (_React$Component) {
             'Teamsters'
           )
         );
+      } else if (this.state.agency === 'msb') {
+        return _react2.default.createElement(
+          'select',
+          { id: 'barg_unit' },
+          _react2.default.createElement('option', { value: '' }),
+          _react2.default.createElement(
+            'option',
+            { value: 'MSBEA' },
+            'MSBEA'
+          )
+        );
       } else return _react2.default.createElement('select', { id: 'barg_unit', disabled: true });
     }
   }, {
@@ -21945,11 +22055,6 @@ var SearchTable = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { style: { position: 'absolute', top: 0, right: '30px', padding: '10px', width: '332px' } },
-          _react2.default.createElement(
-            'p',
-            { style: { fontSize: '14px', fontWeight: 'bold' } },
-            'Tips'
-          ),
           _react2.default.createElement(
             'ul',
             { style: { padding: 0, fontSize: '12px', listStyle: 'disc' } },
@@ -22069,7 +22174,7 @@ var SearchTable = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   'p',
-                  { style: { margin: 0 } },
+                  { style: { margin: '0px 10px' } },
                   'to'
                 ),
                 _react2.default.createElement(
@@ -22204,11 +22309,6 @@ var SearchTable = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   'option',
-                  { value: 'cbj' },
-                  'City and Burough of Juneau'
-                ),
-                _react2.default.createElement(
-                  'option',
                   { value: 'university' },
                   'University of Alaska'
                 ),
@@ -22221,6 +22321,11 @@ var SearchTable = function (_React$Component) {
                   'option',
                   { value: 'fnsb' },
                   'Fairbanks North Star Borough'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'msb' },
+                  'Mat Su Borough'
                 )
               )
             ),
