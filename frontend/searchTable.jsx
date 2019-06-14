@@ -137,6 +137,17 @@ class SearchTable extends React.Component {
           <option value="MSBEA">MSBEA</option>
         </select>
       );
+    } else if (this.state.agency === 'soa') {
+        return (
+            <select id="barg_unit">
+                <option value='Mt. Edgecumbe Teachers'>Mt. Edgecumbe Teachers</option>
+                <option value='Masters, Mates, & Pilots'>Masters, Mates, & Pilots</option>
+                <option value='Marine Engineers'>Marine Engineers</option>
+                <option value='Inland Boatmen'>Inland Boatmen</option>
+                <option value='AK Vocational Technical Center Teachers'>AK Vocational Technical Center Teachers</option>
+                <option value='Exempt / Partially Exempt Employees'>Exempt / Partially Exempt Employees</option>
+            </select>
+        )
     } else return <select id='barg_unit' disabled></select>
   }
 
@@ -245,10 +256,11 @@ class SearchTable extends React.Component {
                 id='agency'
               >
                 <option value='asd'>Anchorage School District</option>
-                <option value='university'>University of Alaska</option>
-                <option value='moa'>Municipality of Anchorage</option>
                 <option value='fnsb'>Fairbanks North Star Borough</option>
                 <option value='msb'>Mat Su Borough</option>
+                <option value='moa'>Municipality of Anchorage</option>
+                <option value='soa'>State of Alaska</option>
+                <option value='university'>University of Alaska</option>
               </select>
             </div>
             <div className='searchField'>

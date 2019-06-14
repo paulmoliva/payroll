@@ -2,8 +2,8 @@ from . import base_model
 from . import asd
 from . import cbj
 from . import moa
+from . import soa
 from . import university
 from . import peak
 from . import fnsb
 from . import msb
-
