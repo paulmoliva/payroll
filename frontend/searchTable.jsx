@@ -140,6 +140,7 @@ class SearchTable extends React.Component {
     } else if (this.state.agency === 'soa') {
         return (
             <select id="barg_unit">
+                <option value=''></option>
                 <option value='Mt. Edgecumbe Teachers'>Mt. Edgecumbe Teachers</option>
                 <option value='Masters, Mates, & Pilots'>Masters, Mates, & Pilots</option>
                 <option value='Marine Engineers'>Marine Engineers</option>
