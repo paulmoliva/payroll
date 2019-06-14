@@ -22361,7 +22361,7 @@ var SearchTable = function (_React$Component) {
                 _react2.default.createElement(
                   'option',
                   { value: 'soa' },
-                  'State of Alaska'
+                  'State of Alaska Executive Branch'
                 ),
                 _react2.default.createElement(
                   'option',
