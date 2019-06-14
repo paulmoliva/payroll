@@ -260,7 +260,7 @@ class SearchTable extends React.Component {
                 <option value='fnsb'>Fairbanks North Star Borough</option>
                 <option value='msb'>Mat Su Borough</option>
                 <option value='moa'>Municipality of Anchorage</option>
-                <option value='soa'>State of Alaska</option>
+                <option value='soa'>State of Alaska Executive Branch</option>
                 <option value='university'>University of Alaska</option>
               </select>
             </div>
