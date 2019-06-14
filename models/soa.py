@@ -3,7 +3,7 @@ from . import base_model
 
 
 class SOA(db.Model, base_model.BaseModel):
-    __tablename__ = 'moa'
+    __tablename__ = 'soa'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     first_name = db.Column(db.String(255))
