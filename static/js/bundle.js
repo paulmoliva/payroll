@@ -22038,6 +22038,7 @@ var SearchTable = function (_React$Component) {
         return _react2.default.createElement(
           'select',
           { id: 'barg_unit' },
+          _react2.default.createElement('option', { value: '' }),
           _react2.default.createElement(
             'option',
             { value: 'Mt. Edgecumbe Teachers' },
