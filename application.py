@@ -23,9 +23,10 @@ db.init_app(application)
 def search_peaks():
     school_name = flask.request.args.get('school_name')
     year = flask.request.args.get('year')
-    all_scores = peak.Peaks.query.filter(peak.Peaks.school_name == school_name).all()
+    all_scores = peak.Peaks.query.filter(peak.Peaks.school_name == school_name)
     if year:
-        all_scores = peak.Peaks.query.filter(peak.Peaks.year == year)
+        all_scores = all_scores.filter(peak.Peaks.year == year)
+    all_scores = all_scores.all()
     result = []
     for score in all_scores:
         result.append(score.as_dict())
