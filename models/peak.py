@@ -14,5 +14,6 @@ class Peaks(db.Model, base_model.BaseModel):
     NotProficientPercent = db.Column(db.String(255))
     TotalTested = db.Column(db.Integer)
     AllStudents = db.Column(db.Integer)
+    year = db.Column(db.Integer)
     PercentTested = db.Column(db.String(255))
     id = db.Column(db.Integer, primary_key=True)

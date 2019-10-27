@@ -20,12 +20,12 @@ db.init_app(application)
 
 
 @application.route('/peaks', methods=['GET'])
-@application.route('/peaks/2017', methods=['GET'])
-@application.route('/peaks/2018', methods=['GET'])
 def search_peaks():
     school_name = flask.request.args.get('school_name')
-    print(school_name)
+    year = flask.request.args.get('year')
     all_scores = peak.Peaks.query.filter(peak.Peaks.school_name == school_name).all()
+    if year:
+        all_scores = peak.Peaks.query.filter(peak.Peaks.year == year)
     result = []
     for score in all_scores:
         result.append(score.as_dict())
