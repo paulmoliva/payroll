@@ -3,6 +3,7 @@ from . import asd
 from . import cbj
 from . import moa
 from . import soa
+from . import seward
 from . import university
 from . import peak
 from . import fnsb

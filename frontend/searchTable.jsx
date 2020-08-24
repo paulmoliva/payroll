@@ -149,6 +149,15 @@ class SearchTable extends React.Component {
                 <option value='Exempt / Partially Exempt Employees'>Exempt / Partially Exempt Employees</option>
             </select>
         )
+    }  else if (this.state.agency === 'seward') {
+        return (
+            <select id="barg_unit">
+                <option value=''></option>
+                <option value='IBEW'>IBEW</option>
+                <option value='SPEA'>SPEA</option>
+                <option value='None'>None</option>
+            </select>
+        )
     } else return <select id='barg_unit' disabled></select>
   }
 
@@ -261,6 +270,7 @@ class SearchTable extends React.Component {
                 <option value='msb'>Mat Su Borough</option>
                 <option value='moa'>Municipality of Anchorage</option>
                 <option value='soa'>State of Alaska Executive Branch</option>
+                <option value='seward'>City of Seward</option>
                 <option value='university'>University of Alaska</option>
               </select>
             </div>
