@@ -33228,11 +33228,16 @@ var SearchTable = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'select',
-                { id: 'order_by' },
+                { id: 'order_by', disabled: true },
                 _react2.default.createElement(
                   'option',
-                  { value: '2017' },
+                  { selected: this.state.agency !== 'seward', value: '2017' },
                   '2017'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { selected: this.state.agency === 'seward', value: '2018' },
+                  '2018'
                 )
               )
             )

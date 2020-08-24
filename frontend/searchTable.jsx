@@ -247,8 +247,9 @@ class SearchTable extends React.Component {
             </div>
             <div className='searchField'>
               <p className='searchLabel'>Year</p>
-              <select id='order_by'>
-                <option value='2017'>2017</option>
+              <select id='order_by' disabled>
+                <option selected={this.state.agency !== 'seward'} value='2017'>2017</option>
+                <option selected={this.state.agency === 'seward'} value='2018'>2018</option>
               </select>
             </div>
           </div>
